@@ -23,7 +23,7 @@ import com.axonivy.ivy.webtest.engine.EngineUrl;
  * <a href="https://developer.axonivy.com/doc/10.0/concepts/testing/web-testing.html">WebTesting docs</a>
  * </p>
  */
-@IvyWebTest(headless = false)
+@IvyWebTest(headless = true)
 public class SampleWebIT{
 
   @Test
