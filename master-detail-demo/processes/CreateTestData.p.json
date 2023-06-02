@@ -1,0 +1,90 @@
+{
+  "format" : "10.0.0",
+  "id" : "1887B5D187E6060D",
+  "config" : {
+    "data" : "Test.CreateTestDataData"
+  },
+  "elements" : [ {
+      "id" : "f3",
+      "type" : "Script",
+      "name" : [
+        "create test",
+        "data"
+      ],
+      "config" : {
+        "output" : {
+          "code" : [
+            "import com.axonivy.demo.masterdetail.service.TestDataService;",
+            "",
+            "TestDataService.createAndSaveBusinessTestData();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 504, "y" : 152 }
+      },
+      "connect" : { "id" : "f10", "to" : "f9" }
+    }, {
+      "id" : "f7",
+      "type" : "RequestStart",
+      "name" : "createTestDataRepo.ivp",
+      "config" : {
+        "callSignature" : "createTestData",
+        "outLink" : "createTestData.ivp",
+        "startName" : "Create Test Data Repo",
+        "tags" : "demo"
+      },
+      "visual" : {
+        "at" : { "x" : 344, "y" : 152 },
+        "labelOffset" : { "x" : 50, "y" : 37 }
+      },
+      "connect" : { "id" : "f8", "to" : "f3" }
+    }, {
+      "id" : "f9",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 664, "y" : 152 }
+      }
+    }, {
+      "id" : "f12",
+      "type" : "Script",
+      "name" : [
+        "create test",
+        "data"
+      ],
+      "config" : {
+        "output" : {
+          "code" : [
+            "import com.axonivy.demo.masterdetail.service.TestDataService;",
+            "",
+            "TestDataService.createAndSaveDatabaseTestData();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 504, "y" : 216 }
+      },
+      "connect" : { "id" : "f16", "to" : "f14" }
+    }, {
+      "id" : "f13",
+      "type" : "RequestStart",
+      "name" : "createTestDataDatabase.ivp",
+      "config" : {
+        "callSignature" : "createTestDataDatabase",
+        "outLink" : "createTestDataDatabase.ivp",
+        "startName" : "Create Test Data Database",
+        "tags" : "demo"
+      },
+      "visual" : {
+        "at" : { "x" : 344, "y" : 216 },
+        "labelOffset" : { "x" : 62, "y" : 37 }
+      },
+      "connect" : { "id" : "f15", "to" : "f12" }
+    }, {
+      "id" : "f14",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 664, "y" : 216 }
+      }
+    } ]
+}

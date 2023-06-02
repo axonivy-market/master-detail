@@ -1,0 +1,122 @@
+{
+  "format" : "10.0.0",
+  "id" : "188341B154DAFDDD",
+  "config" : {
+    "data" : "com.axonivy.demo.MasterDetailDemoData"
+  },
+  "elements" : [ {
+      "id" : "f5",
+      "type" : "RequestStart",
+      "name" : "showProductList.ivp",
+      "config" : {
+        "callSignature" : "showProductList",
+        "outLink" : "showProductList.ivp",
+        "input" : {
+          "code" : [
+            "import com.axonivy.demo.masterdetail.ui.ProductRepoLazyDataModel;",
+            "",
+            "out.lazyDataModel = new ProductRepoLazyDataModel();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 104, "y" : 160 }
+      },
+      "connect" : { "id" : "f8", "to" : "f7" }
+    }, {
+      "id" : "f6",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 360, "y" : 160 }
+      }
+    }, {
+      "id" : "f7",
+      "type" : "DialogCall",
+      "name" : "List all products",
+      "config" : {
+        "dialogId" : "com.axonivy.demo.masterdetail.StatefulDatatable",
+        "startMethod" : "start(com.axonivy.demo.masterdetail.ui.ProductLazyDataModel)",
+        "call" : {
+          "params" : [
+            { "name" : "lazyModel", "type" : "com.axonivy.demo.masterdetail.ui.ProductLazyDataModel" }
+          ],
+          "map" : {
+            "param.lazyModel" : "in.lazyDataModel"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 160 }
+      },
+      "connect" : { "id" : "f9", "to" : "f6" }
+    }, {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "manageProduct.ivp",
+      "config" : {
+        "callSignature" : "manageProduct",
+        "input" : {
+          "params" : [
+            { "name" : "productID", "type" : "String" }
+          ],
+          "map" : {
+            "out.productID" : "param.productID"
+          }
+        },
+        "outLink" : "manageProduct.ivp",
+        "showInStartList" : false
+      },
+      "visual" : {
+        "at" : { "x" : 104, "y" : 256 }
+      },
+      "connect" : { "id" : "f3", "to" : "f2" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 544, "y" : 256 }
+      }
+    }, {
+      "id" : "f2",
+      "type" : "DialogCall",
+      "name" : "Product Detail",
+      "config" : {
+        "dialogId" : "com.axonivy.demo.masterdetail.ProductDetail",
+        "startMethod" : "start(String)",
+        "call" : {
+          "params" : [
+            { "name" : "id", "type" : "String" }
+          ],
+          "map" : {
+            "param.id" : "in.productID"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 256 }
+      },
+      "connect" : { "id" : "f11", "to" : "f10" }
+    }, {
+      "id" : "f10",
+      "type" : "DialogCall",
+      "name" : "List all products",
+      "config" : {
+        "dialogId" : "com.axonivy.demo.masterdetail.StatefulDatatable",
+        "startMethod" : "start(com.axonivy.demo.masterdetail.ui.ProductLazyDataModel)",
+        "call" : {
+          "params" : [
+            { "name" : "lazyModel", "type" : "com.axonivy.demo.masterdetail.ui.ProductLazyDataModel" }
+          ],
+          "code" : [
+            "import com.axonivy.demo.masterdetail.ui.ProductRepoLazyDataModel;",
+            "",
+            "param.lazyModel = new ProductRepoLazyDataModel();"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 408, "y" : 256 }
+      },
+      "connect" : { "id" : "f4", "to" : "f1" }
+    } ]
+}
