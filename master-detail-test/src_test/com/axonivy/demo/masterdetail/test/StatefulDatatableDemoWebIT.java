@@ -22,12 +22,10 @@ import ch.ivyteam.ivy.environment.IvyTest;
 import ch.ivyteam.ivy.security.IUser;
 
 /**
- * This Stateful Datatable Demo Web test will:
- * 1_ generate the test data in the business repo.
- * 2_ login into the system with "Tester" user.
- * 3_ start "showDatatableRepo" process
- * 4_ verify that the table of "Products" is displayed.
- * 5_ add a New "Product" into the business repo.
+ * This Stateful Datatable Demo Web test will: 1_ generate the test data in the
+ * business repo. 2_ login into the system with "Tester" user. 3_ start
+ * "showProductList" process 4_ verify that the table of "Products" is
+ * displayed. 5_ add a New "Product" into the business repo.
  * 
  */
 @IvyTest
@@ -40,19 +38,18 @@ public class StatefulDatatableDemoWebIT {
 	public void createTestData() {
 		// valid links can be copied from the start page of the internal web-browser
 		open(EngineUrl.createProcessUrl("master-detail-demo/1887B5D187E6060D/createTestData.ivp"));
-		
-		
+
 	}
 
 	@Test
 	@Order(2)
 	public void showDatatableRepo(@Named("tester") IUser tester) {
 		assertThat(tester.getDisplayName()).isEqualTo("Tester");
-		
+
 		open(EngineUrl.base() + "default-workflow/faces/loginTable.xhtml");
 
 		$(By.xpath("//tr[@data-rk='Tester']")).$(By.tagName("td")).shouldBe(visible).click();
-		
+
 		// valid links can be copied from the start page of the internal web-browser
 		open(EngineUrl.createProcessUrl("master-detail-demo/188341B154DAFDDD/showProductList.ivp"));
 		// verify that the registration was successful.
@@ -68,28 +65,28 @@ public class StatefulDatatableDemoWebIT {
 		$(By.id("form:productTable:addProduct")).shouldBe(enabled).click();
 		// fill new customer form
 		$(By.id("addProductDialogForm:productName")).sendKeys("New test product");
-		
+
 		$(By.id("addProductDialogForm:status")).shouldBe(enabled).click();
 		$(By.id("addProductDialogForm:status_1")).shouldBe(enabled).click();
-		
+
 		$(By.id("addProductDialogForm:validThrough_input")).shouldBe(enabled).click();
 		$(By.id("addProductDialogForm:validThrough_panel")).$(By.linkText("24")).shouldBe(enabled).click();
-		
+
 		$(By.id("addProductDialogForm:orderDate_input")).shouldBe(enabled).click();
 		$(By.id("addProductDialogForm:orderDate_panel")).$(By.linkText("25")).shouldBe(enabled).click();
-		
+
 		$(By.id("addProductDialogForm:deliveryDate_input")).shouldBe(enabled).click();
 		$(By.id("addProductDialogForm:deliveryDate_panel")).$(By.linkText("26")).shouldBe(enabled).click();
-		
+
 		$(By.id("addProductDialogForm:quantity_input")).sendKeys("10");
-		
+
 		$(By.id("addProductDialogForm:quality")).shouldBe(enabled).click();
 		$(By.id("addProductDialogForm:quality_1")).shouldBe(enabled).click();
-		
+
 		$(By.id("addProductDialogForm:onSale")).shouldBe(enabled).click();
-		
+
 		$(By.id("addProductDialogForm:addProduct")).shouldBe(enabled).click();
-		
+
 		// verify that the registration was successful.
 		$(By.id("form:productTable")).shouldBe(visible, text("List of products"));
 	}

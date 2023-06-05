@@ -3,7 +3,7 @@
   "id" : "1883447E949FB220",
   "kind" : "HTML_DIALOG",
   "config" : {
-    "data" : "com.axonivy.demo.masterdetail.StatefulDatatable.StatefulDatatableData"
+    "data" : "com.axonivy.demo.masterdetail.ProductList.ProductListData"
   },
   "elements" : [ {
       "id" : "f0",

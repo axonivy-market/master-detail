@@ -45,46 +45,5 @@
       "visual" : {
         "at" : { "x" : 664, "y" : 152 }
       }
-    }, {
-      "id" : "f12",
-      "type" : "Script",
-      "name" : [
-        "create test",
-        "data"
-      ],
-      "config" : {
-        "output" : {
-          "code" : [
-            "import com.axonivy.demo.masterdetail.service.TestDataService;",
-            "",
-            "TestDataService.createAndSaveDatabaseTestData();"
-          ]
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 504, "y" : 216 }
-      },
-      "connect" : { "id" : "f16", "to" : "f14" }
-    }, {
-      "id" : "f13",
-      "type" : "RequestStart",
-      "name" : "createTestDataDatabase.ivp",
-      "config" : {
-        "callSignature" : "createTestDataDatabase",
-        "outLink" : "createTestDataDatabase.ivp",
-        "startName" : "Create Test Data Database",
-        "tags" : "demo"
-      },
-      "visual" : {
-        "at" : { "x" : 344, "y" : 216 },
-        "labelOffset" : { "x" : 62, "y" : 37 }
-      },
-      "connect" : { "id" : "f15", "to" : "f12" }
-    }, {
-      "id" : "f14",
-      "type" : "TaskEnd",
-      "visual" : {
-        "at" : { "x" : 664, "y" : 216 }
-      }
     } ]
 }

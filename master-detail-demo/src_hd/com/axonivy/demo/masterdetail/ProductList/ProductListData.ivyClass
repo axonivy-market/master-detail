@@ -1,5 +1,5 @@
-StatefulDatatableData #class
-com.axonivy.demo.masterdetail.StatefulDatatable #namespace
+ProductListData #class
+com.axonivy.demo.masterdetail.ProductList #namespace
 copyValid Boolean #field
 copyValid PERSISTENT #fieldModifier
 editedRowKey String #field

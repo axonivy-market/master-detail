@@ -34,7 +34,7 @@
       "type" : "DialogCall",
       "name" : "List all products",
       "config" : {
-        "dialogId" : "com.axonivy.demo.masterdetail.StatefulDatatable",
+        "dialogId" : "com.axonivy.demo.masterdetail.ProductList",
         "startMethod" : "start(com.axonivy.demo.masterdetail.ui.ProductLazyDataModel)",
         "call" : {
           "params" : [
@@ -101,7 +101,7 @@
       "type" : "DialogCall",
       "name" : "List all products",
       "config" : {
-        "dialogId" : "com.axonivy.demo.masterdetail.StatefulDatatable",
+        "dialogId" : "com.axonivy.demo.masterdetail.ProductList",
         "startMethod" : "start(com.axonivy.demo.masterdetail.ui.ProductLazyDataModel)",
         "call" : {
           "params" : [
