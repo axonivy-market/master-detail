@@ -31,7 +31,7 @@ import ch.ivyteam.ivy.security.IUser;
 @IvyTest
 @IvyWebTest(headless = true)
 @TestMethodOrder(OrderAnnotation.class)
-public class StatefulDatatableDemoWebIT {
+public class ProductListDemoWebIT {
 
 	@Test
 	@Order(1)
