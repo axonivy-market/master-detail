@@ -108,10 +108,10 @@
 					</div>
 					<div class="ui-g">
 						<div class="ui-g-12">
-							<p:commandButton id="saveProduct" value="Save" styleClass="buttonMargin"
+							<p:commandButton id="saveProduct" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/statefuldatatable/ui/StatefulDatatable/save')}" styleClass="buttonMargin"
 									icon="fa fa-check" iconPos="right" 
 									actionListener="#{logic.save}" action="StatefulDatatable" style="float:right" />	
-							<p:commandButton value="Cancel" icon="fa fa-times" iconPos="right" style="float:right"
+							<p:commandButton value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/statefuldatatable/ui/StatefulDatatable/cancel')}" icon="fa fa-times" iconPos="right" style="float:right"
 									action="StatefulDatatable" />
 						</div>
 					</div>

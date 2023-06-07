@@ -41,6 +41,7 @@ Dialogs:
               addBusiness: Add Product
               addNewBusiness: Add new Product
               allUsers: All Users
+              cancel: Cancel
               columns: Columns
               copy: Copy
               copyProduct: Copy Product
@@ -69,6 +70,7 @@ Dialogs:
               quality: Quality
               quantity: Quantity
               required: 'Required:'
+              save: Save
               saveProfile: Save Profile
               state: State
               title: Stateful Datatable

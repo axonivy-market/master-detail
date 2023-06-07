@@ -7,6 +7,7 @@ Dialogs:
             StatefulDatatable:
               addNewBusiness: Add new Product
               allUsers: Alle Nutzer
+              cancel: Abbrechen
               columns: Spalten
               copy: Copy
               deleteProfileHeader: Löschen des Profils bestätigen
@@ -18,4 +19,5 @@ Dialogs:
               profilType: Profiltyp
               profileName: Profilname
               publicProfiles: Öffentliches Profil
+              save: Speichern
               saveProfile: Profil speichern
