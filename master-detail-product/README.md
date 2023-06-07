@@ -3,6 +3,7 @@
 A utility process with one master dialog(with detail view) and a stand-alone detail dialog to implement a master detail scenario with Ivy and Primefaces.
 
 ## Demo
+![List of Products](master-detail-svgrepo-com.svg "List of Products")
 
 In this demo, a lazy datatable is listing all the products available in the Ivy business repo.
 There exist three scenarios:
