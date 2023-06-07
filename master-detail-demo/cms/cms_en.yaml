@@ -41,7 +41,6 @@ Dialogs:
               addBusiness: Add Product
               addNewBusiness: Add new Product
               allUsers: All Users
-              products: List of products
               columns: Columns
               copy: Copy
               copyProduct: Copy Product
@@ -61,7 +60,9 @@ Dialogs:
               onlyMe: Only me
               orderDate: Order Date
               privateProfiles: Private Profiles
+              productDetail: Product Detail
               productName: Product Name
+              products: List of products
               profilType: Profile Type
               profileName: Profilname
               publicProfiles: Public Profiles

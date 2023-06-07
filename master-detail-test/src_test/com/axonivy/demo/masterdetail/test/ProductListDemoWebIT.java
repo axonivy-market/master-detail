@@ -90,20 +90,4 @@ public class ProductListDemoWebIT {
 		// verify that the registration was successful.
 		$(By.id("form:productTable")).shouldBe(visible, text("List of products"));
 	}
-
-//	@Test
-//	@Order(4)
-//	public void editProduct() {
-//		// valid links can be copied from the start page of the internal web-browser
-//		open(EngineUrl.createProcessUrl("master-detail-demo/188341B154DAFDDD/showProductList.ivp"));
-//
-//		$(By.id("form:productTable:actionsColumn:editCommandLink")).shouldBe(enabled).click();
-//		// fill new customer form
-//		$(By.id("addProductDialogFormNav:productName")).sendKeys("Edited product");
-//		$(By.id("addProductDialogFormNav:saveProduct")).shouldBe(enabled).click();
-//
-//		// verify that the registration was successful.
-//		$(By.id("form:productTable")).shouldBe(visible, text("List of products"));
-//	}
-
 }

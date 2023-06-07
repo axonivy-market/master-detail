@@ -7,7 +7,7 @@
 	xmlns:pe="http://primefaces.org/ui/extensions">
 <h:body>
 	<ui:composition template="/layouts/frame-10.xhtml">
-	<ui:define name="title">Product Detail </ui:define>
+	<ui:define name="title">#{ivy.cms.co('/Dialogs/com/axonivy/demo/statefuldatatable/ui/StatefulDatatable/productDetail')} </ui:define>
 	<ui:define name="content">
 		<script>
 			window.isHideTaskName = true;
@@ -19,7 +19,7 @@
 	<h:form id="addProductDialogFormNav" >
 		<div class="ui-g">
 			<div class="ui-g-4">
-				  <p:outputLabel  value="Product Detail" style="font-weight:bold;font-size:20px"/>
+				  <p:outputLabel  value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/statefuldatatable/ui/StatefulDatatable/productDetail')}" style="font-weight:bold;font-size:20px"/>
 			</div>
 						
 		</div>
