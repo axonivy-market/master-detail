@@ -1,7 +1,7 @@
-# MY-PRODUCT-NAME
+# Master Detail 
 
-[![CI Build](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml)
+[![CI Build](https://github.com/axonivy-market/master-detail/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/master-detail/actions/workflows/ci.yml)
 
-"YOUR SHORT DESCRIPTION GOES HERE"
+This demo shows the different possibilities of user navigation that can be implemented in a master detail scenario.
 
-Read our [documentation](MY-PRODUCT-NAME-product/README.md).
+Read our [documentation](master-detail-product/README.md).

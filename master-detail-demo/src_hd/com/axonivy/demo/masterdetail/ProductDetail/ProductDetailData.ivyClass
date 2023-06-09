@@ -1,0 +1,6 @@
+ProductDetailData #class
+com.axonivy.demo.masterdetail.ProductDetail #namespace
+id String #field
+id PERSISTENT #fieldModifier
+product com.axonivy.demo.masterdetail.entity.Product #field
+product PERSISTENT #fieldModifier

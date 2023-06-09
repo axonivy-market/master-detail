@@ -1,0 +1,4 @@
+MasterDetailDemoData #class
+com.axonivy.demo #namespace
+lazyDataModel com.axonivy.demo.masterdetail.ui.ProductLazyDataModel #field
+productID String #field

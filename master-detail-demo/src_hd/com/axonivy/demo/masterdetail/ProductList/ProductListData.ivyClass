@@ -1,0 +1,36 @@
+ProductListData #class
+com.axonivy.demo.masterdetail.ProductList #namespace
+copyValid Boolean #field
+copyValid PERSISTENT #fieldModifier
+editedRowKey String #field
+editedRowKey PERSISTENT #fieldModifier
+field String #field
+field PERSISTENT #fieldModifier
+isProfileAdmin Boolean #field
+isProfileAdmin PERSISTENT #fieldModifier
+newObjects List<java.lang.Object> #field
+newObjects PERSISTENT #fieldModifier
+numberOfCopies Integer #field
+numberOfCopies PERSISTENT #fieldModifier
+privateProfiles java.util.List<com.axonivy.demo.masterdetail.entity.Profile> #field
+privateProfiles PERSISTENT #fieldModifier
+publicProfiles java.util.List<com.axonivy.demo.masterdetail.entity.Profile> #field
+publicProfiles PERSISTENT #fieldModifier
+selectedProduct java.util.List<com.axonivy.demo.masterdetail.entity.Product> #field
+selectedProduct PERSISTENT #fieldModifier
+selectedProfile com.axonivy.demo.masterdetail.entity.Profile #field
+selectedProfile PERSISTENT #fieldModifier
+streamedContent org.primefaces.model.DefaultStreamedContent #field
+streamedContent PERSISTENT #fieldModifier
+tableRows Integer #field
+tableRows PERSISTENT #fieldModifier
+stateDataTableBean com.axonivy.demo.masterdetail.ui.StateDataTableBean #field
+stateDataTableBean PERSISTENT #fieldModifier
+multiChangeState com.axonivy.demo.masterdetail.enums.ProductStatus #field
+multiChangeState PERSISTENT #fieldModifier
+product com.axonivy.demo.masterdetail.entity.Product #field
+product PERSISTENT #fieldModifier
+readOnly Boolean #field
+readOnly PERSISTENT #fieldModifier
+selectedProductID String #field
+selectedProductID PERSISTENT #fieldModifier
