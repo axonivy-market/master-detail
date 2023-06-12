@@ -7,7 +7,6 @@ Axon Ivy's Master-detail interface best-practice example is designed to accelera
 * This best-practice example is a valuable resource for resolving [Master-Detail interface](https://en.wikipedia.org/wiki/Master%E2%80%93detail_interface) requirements in any process automation project.
 
 ## Demo
-![List of Products](master-detail-svgrepo-com.svg "List of Products")
 
 In this demo, a lazy datatable is listing all the products available in the Ivy business repo.
 There exist three scenarios:
