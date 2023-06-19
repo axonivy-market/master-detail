@@ -409,12 +409,12 @@
 						</p:selectOneRadio>
 					</h:panelGrid>
 					<h:panelGroup layout="block">
-						<p:commandButton id="saveFilter" value="#{ivy.cms.co('/ch.ivy.addon.portalkit.ui.jsf/common/ok')}" process="@form" 
+						<p:commandButton id="saveFilter" value="#{ivy.cms.co('/Labels/ok')}" process="@form" 
 							oncomplete="if (args &amp;&amp; !args.validationFailed) {PF('saveProfileDialog').hide()}" style="float:right" styleClass="buttonMargin"
 							actionListener="#{data.stateDataTableBean.saveProfile()}" update="profileSaveForm #{p:resolveFirstComponentWithId('productPanel', view).clientId} #{p:resolveFirstComponentWithId('message', view).clientId}">
 						</p:commandButton>
 						<p:spacer width="5px" />
-						<p:commandButton type="button" value="#{ivy.cms.co('/ch.ivy.addon.portalkit.ui.jsf/common/cancel')}" style="float:right"
+						<p:commandButton type="button" value="#{ivy.cms.co('/Labels/cancel')}" style="float:right"
 							onclick="PF('saveProfileDialog').hide();">
 						</p:commandButton>
 					</h:panelGroup>

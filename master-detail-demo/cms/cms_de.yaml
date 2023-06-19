@@ -21,3 +21,8 @@ Dialogs:
               publicProfiles: Öffentliches Profil
               save: Speichern
               saveProfile: Profil speichern
+Labels:
+  cancel: Abbrechen
+  'no': Nein
+  ok: Ok
+  'yes': Ja

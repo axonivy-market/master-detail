@@ -77,5 +77,7 @@ Dialogs:
               validThrough: Valid Through
               'yes': 'Yes'
 Labels:
+  cancel: Cancel
   'no': 'No'
+  ok: Ok
   'yes': 'Yes'

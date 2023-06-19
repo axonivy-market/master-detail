@@ -17,7 +17,8 @@
             "",
             "out.lazyDataModel = new ProductRepoLazyDataModel();"
           ]
-        }
+        },
+        "startName" : "Show Product List"
       },
       "visual" : {
         "at" : { "x" : 104, "y" : 160 }
