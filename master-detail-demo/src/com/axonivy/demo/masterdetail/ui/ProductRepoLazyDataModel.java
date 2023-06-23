@@ -207,7 +207,7 @@ public class ProductRepoLazyDataModel extends LazyDataModel<Product> implements 
 			DateTime dateTime = (DateTime) newObjects.get(0);
 			//Example validation
 			if(dateTime.toJavaDate().after(product.getDeliveryDate())) {
-				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, Ivy.cms().co("/Dialogs/com/axonivy/demo/statefuldatatable/ui/StatefulDatatable/Error/deliveryDateBeforeOrderDate"), null));
+				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, Ivy.cms().co("/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/Error/deliveryDateBeforeOrderDate"), null));
 				return product;
 			}
 			product.setOrderDate(dateTime.toJavaDate());
@@ -215,7 +215,7 @@ public class ProductRepoLazyDataModel extends LazyDataModel<Product> implements 
 			DateTime dateTime = (DateTime) newObjects.get(0);
 			//Example validation
 			if(dateTime.toJavaDate().before(product.getOrderDate())) {
-				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, Ivy.cms().co("/Dialogs/com/axonivy/demo/statefuldatatable/ui/StatefulDatatable/Error/deliveryDateBeforeOrderDate"), null));
+				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, Ivy.cms().co("/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/Error/deliveryDateBeforeOrderDate"), null));
 				return product;
 			}
 			product.setDeliveryDate(dateTime.toJavaDate());
