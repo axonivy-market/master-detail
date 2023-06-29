@@ -108,11 +108,10 @@
 					</div>
 					<div class="ui-g">
 						<div class="ui-g-12">
-							<p:commandButton id="saveProduct" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/save')}" styleClass="buttonMargin"
-									icon="fa fa-check" iconPos="right" 
-									actionListener="#{logic.save}" action="ProductList" style="float:right" />	
-							<p:commandButton value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/cancel')}" icon="fa fa-times" iconPos="right" style="float:right"
-									action="ProductList" />
+							<p:commandButton id="saveProduct" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/save')}" 
+									styleClass="buttonMargin" icon="fa fa-check" actionListener="#{logic.save}" action="ProductList" style="float:right" />	
+							<p:commandButton value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/cancel')}" 
+									icon="fa fa-times" style="float:right" action="ProductList" />
 						</div>
 					</div>
 				</h:form>

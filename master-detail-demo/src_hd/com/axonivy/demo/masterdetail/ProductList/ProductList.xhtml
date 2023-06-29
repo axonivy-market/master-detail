@@ -22,14 +22,10 @@
 		        window.isHideTaskName= true;
 		        window.isHideTaskAction = true;
 		        window.isHideCaseInfo = true;
-		        
-		        //Removal of the html scroll bar as a workaround for Chrome making the page to big when using many rows
-		        var style = document.createElement("style");
-		        style.innerHTML = `body::-webkit-scrollbar {display: none;}`;
-		        document.head.appendChild(style);
+		      
 			</script>
 			<h:outputStylesheet name="layouts/styles/customStyle.css" />
-			<h:form id="form" style="height: 95vh">
+			<h:form id="form" style="height: 80vh">
 				<p:growl id="message" />
 				<p:remoteCommand update="@form" actionListener="#{data.stateDataTableBean.init()}" autoRun="true" rendered="#{data.stateDataTableBean.publicProfiles == null}"/>
 				<p:remoteCommand name="refreshSetup" actionListener="#{data.stateDataTableBean.onRefresh()}" />
@@ -37,10 +33,10 @@
 				<p:remoteCommand name="resetFilter" actionListener="#{data.stateDataTableBean.resetProfile}" update="#{p:resolveFirstComponentWithId('productTable', view).clientId}"></p:remoteCommand>
 				<p:defaultCommand target="hiddenButton" />
 				<p:commandButton id="hiddenButton" oncomplete="PF('productTable').filter()" style="display:none" />
-				<p:dataTable id="productTable" style="height: 97vh" rendered="#{data.stateDataTableBean.publicProfiles != null}"
+				<p:dataTable id="productTable" rendered="#{data.stateDataTableBean.publicProfiles != null}"
 					value="#{data.stateDataTableBean.lazyModel}" var="product" rows="#{data.stateDataTableBean.lazyModel.tableRows}"
 					paginator="true" sortMode="multiple" widgetVar="productTable"   
-					lazy="true" paginatorPosition="top" rowKey="#{product.id}" scrollable="true" scrollHeight="100%"
+					lazy="true" paginatorPosition="bottom" rowKey="#{product.id}" scrollable="true" scrollHeight="100%"
 					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 					currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
 					rowsPerPageTemplate="5,8,10,13,15,18,20,25,30,100"
@@ -48,11 +44,10 @@
 					sortBy="#{data.stateDataTableBean.lazyModel.sortBy}" editMode="cell" editable="true" rowSelectMode="checkbox">
 					<p:ajax event="filter" oncomplete="resetFilter()" />
 					<p:ajax event="sort" oncomplete="resetFilter()" />
- 					<p:ajax event="cellEdit" process="productTable" listener="#{logic.saveProduct}" oncomplete="filterTable()" update="#{p:resolveFirstComponentWithId('message', view).clientId}" />
 					
 					<f:facet name="header">
 						<div class="ui-g-5 noPad">
-							<p:commandButton id="toggler" type="button" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/columns')}" icon="fa fa-columns" iconPos="right"
+							<p:commandButton id="toggler" type="button" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/columns')}" icon="fa fa-columns" 
 								styleClass="tableHeaderButtonLeft whiteIcon" />
 						</div>
 						<div class="ui-g-2 noPad center">
@@ -65,7 +60,7 @@
 								styleClass="tableHeaderButtonRight whiteIcon" />
 							<p:commandButton id="deleteSelected" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/deleteSelected')}" 
 								title="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/deleteSelected')}"
-								icon="fa fa-trash" iconPos="right"
+								icon="fa fa-trash" 
 								oncomplete="PF('deleteProductsDialog').show();"
 								styleClass="tableHeaderButtonRight whiteIcon" />
 							<p:columnToggler datasource="productTable" trigger="toggler">
@@ -88,14 +83,7 @@
 								value="#{data.stateDataTableBean.lazyModel.filterText.get('productName')}"
 								onchange="PF('productTable').filter()" />
 						</f:facet>
-						<p:cellEditor>
-							<f:facet name="output">
-								<p:outputLabel value="#{product.productName}" />
-							</f:facet>
-							<f:facet name="input">
-								<p:inputText value="#{product.productName}" />
-							</f:facet>
-						</p:cellEditor>
+						<p:outputLabel value="#{product.productName}" />
 					</p:column>
 					
 					<p:column id="productStatusColumn" sortBy="#{product.productStatus}" resizable="false"
@@ -112,18 +100,7 @@
 									itemLabel="#{state.getCmsName()}" />
 							</p:selectCheckboxMenu>
 						</f:facet>
-						<p:cellEditor>
-							<f:facet name="output">
-									<p:outputLabel value="#{product.productStatus.getCmsName()}" />
-							</f:facet>
-							<f:facet name="input">
-								<p:selectOneMenu id="productStatus" styleClass="cellInputPart"
-										value="#{product.productStatus}"
-										converter="pojoConverter">
-									<f:selectItems value="#{enumBean.productStatusValues}" var="status" itemLabel="#{status.getCmsName()}" />
-								</p:selectOneMenu>
-							</f:facet>
-						</p:cellEditor>
+						<p:outputLabel value="#{product.productStatus.getCmsName()}" />
 					</p:column>
 					
 					<p:column id="validThroughColumn" sortBy="#{product.validThrough}" resizable="false"
@@ -141,16 +118,9 @@
 									oncomplete="PF('productTable').filter()" />
 							</p:datePicker>
 						</f:facet>
-						<p:cellEditor>
-							<f:facet name="output">
-								<p:outputLabel value="#{product.validThrough}">
-									<f:convertDateTime pattern="dd.MM.yyyy" />
-								</p:outputLabel>
-							</f:facet>
-							<f:facet name="input">
-								<p:datePicker value="#{product.validThrough}" pattern="dd.MM.yyyy" />
-							</f:facet>
-						</p:cellEditor>	
+						<p:outputLabel value="#{product.validThrough}">
+							<f:convertDateTime pattern="dd.MM.yyyy" />
+						</p:outputLabel>
 					</p:column>
 					
 					<p:column id="orderDateColumn" sortBy="#{product.orderDate}" resizable="false"
@@ -168,16 +138,9 @@
 									oncomplete="PF('productTable').filter()" />
 							</p:datePicker>
 						</f:facet>
-						<p:cellEditor>
-							<f:facet name="output">
-								<p:outputLabel value="#{product.orderDate}">
-									<f:convertDateTime pattern="dd.MM.yyyy" />
-								</p:outputLabel>
-							</f:facet>
-							<f:facet name="input">
-								<p:datePicker value="#{product.orderDate}" pattern="dd.MM.yyyy" />
-							</f:facet>
-						</p:cellEditor>
+						<p:outputLabel value="#{product.orderDate}">
+							<f:convertDateTime pattern="dd.MM.yyyy" />
+						</p:outputLabel>
 					</p:column>
 					
 					<p:column id="deliveryDateColumn" sortBy="#{product.deliveryDate}" resizable="false"
@@ -195,16 +158,9 @@
 									oncomplete="PF('productTable').filter()" />
 							</p:datePicker>
 						</f:facet>
-						<p:cellEditor>
-							<f:facet name="output">
-								<p:outputLabel value="#{product.deliveryDate}">
-									<f:convertDateTime pattern="dd.MM.yyyy" />
-								</p:outputLabel>
-							</f:facet>
-							<f:facet name="input">
-								<p:datePicker value="#{product.deliveryDate}" pattern="dd.MM.yyyy" />
-							</f:facet>
-						</p:cellEditor>
+						<p:outputLabel value="#{product.deliveryDate}">
+							<f:convertDateTime pattern="dd.MM.yyyy" />
+						</p:outputLabel>
 					</p:column>				
 													
 					<p:column id="quantityColumn" sortBy="#{product.quantity}" resizable="false"
@@ -217,14 +173,7 @@
 								value="#{data.stateDataTableBean.lazyModel.filterText.get('quantity')}"
 								onchange="PF('productTable').filter()" />
 						</f:facet>
-						<p:cellEditor>
-							<f:facet name="output">
-								<p:outputLabel value="#{product.quantity}" />
-							</f:facet>
-							<f:facet name="input">
-								<p:inputNumber value="#{product.quantity}" decimalPlaces="0" />
-							</f:facet>
-						</p:cellEditor>
+						<p:outputLabel value="#{product.quantity}" />
 					</p:column>
 					
 					<p:column id="qualityColumn" sortBy="#{product.quality}"	resizable="false"
@@ -241,17 +190,7 @@
 									itemLabel="#{quality .getCmsName()}" />
 							</p:selectCheckboxMenu>
 						</f:facet>
-						<p:cellEditor>
-							<f:facet name="output">
-								<p:outputLabel value="#{product.quality.getCmsName()}" />
-							</f:facet>
-							<f:facet name="input">
-								<p:selectOneMenu id="qualityInput" styleClass="cellInputPart"
-										value="#{product.quality}" converter="pojoConverter">
-									<f:selectItems value="#{enumBean.qualityValues}" var="quality" itemLabel="#{quality.getCmsName()}" />
-								</p:selectOneMenu>
-							</f:facet>
-						</p:cellEditor>
+						<p:outputLabel value="#{product.quality.getCmsName()}" />
 					</p:column>
 					
 					<p:column id="onSaleColumn" resizable="false"
@@ -269,39 +208,41 @@
 								<f:selectItem itemLabel="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/no')}" itemValue="#{false}" />
 							</p:selectCheckboxMenu>
 						</f:facet>
-						<p:cellEditor>
-							<f:facet name="output">
-								<p:outputLabel value="#{product.onSale == true ? ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/yes') : (product.onSale == false ? ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/no') : '')}" />
-							</f:facet>
-							<f:facet name="input">
-								<p:selectOneMenu id="onSaleBoolInput" styleClass="cellInputPart"
-										value="#{product.onSale}" converter="pojoConverter">
-									<f:selectItem itemLabel="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/yes')}" itemValue="#{true}" />
-									<f:selectItem itemLabel="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/no')}" itemValue="#{false}" />
-								</p:selectOneMenu>	
-							</f:facet>
-						</p:cellEditor>				
+						<p:outputLabel value="#{product.onSale == true ? ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/yes') : (product.onSale == false ? ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/no') : '')}" />
 					</p:column>
 					
 					<p:column id="actionsColumn" resizable="false"
-						headerText="Actions"
+						headerText="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/actions')}"
 						styleClass="zoneColumnCaseTable" selectRow="false">
-						<div class="ui-g">
-							<div class="ui-g-4">
-							    <p:tooltip for="editCommandLink" value="Navigate through process" position="right"/>
-								<p:commandLink id="editCommandLink" global="false" action="#{logic.onEditCommandLinkClicked(product.id)}" >								    
-									<h:outputText title="#{ivy.cms.co('/Labels/edit')}" styleClass="fa fa-pencil" />
-								</p:commandLink>
-							</div>
-							<div class="ui-g-4">
-								<p:tooltip for="viewCommandLink" value="Navigate through more views of one dialog" position="right"/>
-								<p:commandLink id="viewCommandLink" global="false" action="ProductDetail" actionListener="#{logic.onViewCommandLinkClicked(product)}">							
-									<h:outputText title="#{ivy.cms.co('/Labels/show')}" styleClass="fa fa-eye"  />				
-								</p:commandLink>
-							</div>
-						</div>
+
+					    <p:tooltip for="editThroughProcess" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditThroughProcess')}" position="right"/>
+						<p:commandLink id="editThroughProcess" global="false" action="#{logic.onEditThroughProcessClicked(product.id)}" >								    
+							<h:outputText styleClass="fa fa-pencil" />
+						</p:commandLink>
+
+					    <p:tooltip for="editByLink" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditByLink')}" position="right"/>
+						<p:commandLink id="editByLink" global="false" action="#{logic.onEditByLinkClicked(product.id)}" >								    
+							<h:outputText styleClass="fa fa-link" />
+						</p:commandLink>
+
+						<p:tooltip for="editWithViews" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditWithViews')}" position="right"/>
+						<p:commandLink id="editWithViews" global="false" action="ProductDetail" actionListener="#{logic.onEditByViewsClicked(product)}">							
+							<h:outputText styleClass="fa fa-eye"  />				
+						</p:commandLink>
+
 					</p:column>
 				</p:dataTable>
+				<div class="ui-g">
+					<div class="ui-g-6">
+						<span class="fa fa-plus" style="width: 30px;" /><h:outputText value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipAddNewByDialog')}" /><br />
+						<span class="fa fa-pencil" style="width: 30px;" /><h:outputText value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditThroughProcess')}" /><br />
+						<span class="fa fa-link" style="width: 30px;" /><h:outputText value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditByLink')}" /><br />
+						<span class="fa fa-eye" style="width: 30px;" /><h:outputText value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditWithViews')}" /><br />
+					</div>
+					<div class="ui-g-6">
+						<p:commandButton value="Close Product List" icon="fa fa-times" style="float:right" actionListener="#{logic.close}"/>
+					</div>
+				</div>				
 			</h:form>
 
 	
@@ -394,9 +335,9 @@
 					<div class="ui-g">
 						<div class="ui-g-12">
 							<p:commandButton id="addProduct" value="Ok" styleClass="buttonMargin"
-									icon="fa fa-check" iconPos="right" oncomplete="if (args &amp;&amp; !args.validationFailed) PF('addProductDialog').hide();"
+									icon="fa fa-check" oncomplete="if (args &amp;&amp; !args.validationFailed) PF('addProductDialog').hide();"
 									actionListener="#{logic.addProduct}" update="#{p:resolveFirstComponentWithId('productTable', view).clientId} #{p:resolveFirstComponentWithId('message', view).clientId} addProductDialogForm" style="float:right" />	
-							<p:commandButton value="Cancel" icon="fa fa-times" iconPos="right" style="float:right"
+							<p:commandButton value="Cancel" icon="fa fa-times" style="float:right"
 									onclick="PF('addProductDialog').hide();" type="button" />
 						</div>
 					</div>

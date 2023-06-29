@@ -68,6 +68,10 @@ Dialogs:
               save: Save
               state: State
               title: Stateful Datatable
+              tooltipAddNewByDialog: Add new product by using a modal dialog.
+              tooltipEditByLink: Edit product by navigation to a new  process start link.
+              tooltipEditThroughProcess: Edit product by navigation through business process.
+              tooltipEditWithViews: Edit product by navigation through multiple views of same Axon Ivy dialog.
               validThrough: Valid Through
               'yes': 'Yes'
 Labels:
