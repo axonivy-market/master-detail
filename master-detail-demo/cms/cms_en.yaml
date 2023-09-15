@@ -1,7 +1,7 @@
 com:
   axonivy:
     demo:
-      statefuldatatable:
+      masterdetail:
         enums:
           Availability:
             IN_ORDER:
@@ -32,9 +32,9 @@ Dialogs:
   com:
     axonivy:
       demo:
-        statefuldatatable:
+        masterdetail:
           ui:
-            StatefulDatatable:
+            ProductList:
               Error:
                 deliveryDateBeforeOrderDate: Delivery date cannot be before Order date
               actions: Actions
@@ -46,8 +46,6 @@ Dialogs:
               copy: Copy
               copyProduct: Copy Product
               delete: Delete
-              deleteProfileHeader: Profile Deletion
-              deleteProfileMessage: Are you sure you want to delete this profile?
               deleteSelected: Delete selected
               deletionHeader: Deleting products
               deletionMessage: Do you want to delete all the selected products?
@@ -64,18 +62,20 @@ Dialogs:
               productDetail: Product Detail
               productName: Product Name
               products: List of products
-              profilType: Profile Type
-              profileName: Profilname
-              publicProfiles: Public Profiles
               quality: Quality
               quantity: Quantity
               required: 'Required:'
               save: Save
-              saveProfile: Save Profile
               state: State
               title: Stateful Datatable
+              tooltipAddNewByDialog: Add new product by using a modal dialog.
+              tooltipEditByLink: Edit product by navigation to a new  process start link.
+              tooltipEditThroughProcess: Edit product by navigation through business process.
+              tooltipEditWithViews: Edit product by navigation through multiple views of same Axon Ivy dialog.
               validThrough: Valid Through
               'yes': 'Yes'
 Labels:
+  cancel: Cancel
   'no': 'No'
+  ok: Ok
   'yes': 'Yes'

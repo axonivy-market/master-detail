@@ -9,11 +9,12 @@ Axon Ivy's Master-detail interface best-practice example is designed to accelera
 ## Demo
 
 In this demo, a lazy datatable is listing all the products available in the Ivy business repo.
-There exist three scenarios:
+There exist four scenarios:
 
 1. User adds a new product (demonstrated by modal dialog opened in the same HTML dialog as the master).
-2. User edits an existing product (demonstrated by process design: user is redirected to the stand-alone detail dialog and when finished with editing returns to the master dialog).
-3. User edits an existing product (demonstrated by a detail view contained in the master dialog and navigating by primefaces).
+2. User edits an existing product (demonstrated by business process design: process flow takes the user to a stand-alone detail dialog and when finished with editing returns to the master dialog).
+3. User edits an existing product (demonstrated by calling a process start via link: user is redirected to a process start which opens a stand-alone detail dialog. When finished with editing user returns to the master dialog).
+4. User edits an existing product (demonstrated by a detail view contained in the master dialog and navigating by primefaces).
 
 ## Setup
 

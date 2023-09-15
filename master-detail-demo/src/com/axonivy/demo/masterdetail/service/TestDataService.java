@@ -74,10 +74,4 @@ public class TestDataService {
 			DaoServiceRegistry.getProductRepoDAO().save(product);
 		}
 	}
-	
-	public static void createAndSaveDatabaseTestData() throws ParseException {
-		for(Product product : createTestData()) {
-			DaoServiceRegistry.getProductDatabaseDAO().save(product);
-		}
-	}
 }
