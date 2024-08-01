@@ -28,7 +28,7 @@ import ch.ivyteam.ivy.security.IUser;
  * displayed. 5_ add a New "Product" into the business repo.
  * 
  */
-@IvyTest
+@IvyTest(enableWebServer = true)
 @IvyWebTest(headless = true)
 @TestMethodOrder(OrderAnnotation.class)
 public class ProductListDemoWebIT {
