@@ -1,6 +1,6 @@
-# Master-Detail interface
+# Master-Detail View
 
-Axon Ivy's Master-detail interface best-practice example is designed to accelerate process automation initiatives by demonstrating the flexible and powerful UI possibilities. This example showcases the following features:
+Axon Ivy's Master-detail view best-practice example is designed to accelerate process automation initiatives by demonstrating the flexible and powerful UI possibilities. This example showcases the following features:
 
 * Four different approaches to implementing the Master-Detail Pattern are demonstrated based on the project's complexity. These approaches involve utilizing different process elements, UI views, and modal dialogs.
 * Streamlining UI challenges for both professional developers and low coders, this example provides guidance on efficiently implementing the Master-Detail interface.
