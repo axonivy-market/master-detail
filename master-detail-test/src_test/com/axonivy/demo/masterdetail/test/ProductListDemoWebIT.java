@@ -29,7 +29,7 @@ import ch.ivyteam.ivy.security.IUser;
  * 
  */
 @IvyTest
-@IvyWebTest(headless = true)
+@IvyWebTest
 @TestMethodOrder(OrderAnnotation.class)
 public class ProductListDemoWebIT {
 
@@ -46,7 +46,7 @@ public class ProductListDemoWebIT {
 	public void showDatatableRepo(@Named("tester") IUser tester) {
 		assertThat(tester.getDisplayName()).isEqualTo("Tester");
 
-		open(EngineUrl.base() + "default-workflow/faces/loginTable.xhtml");
+		open(EngineUrl.base() + "/dev-workflow-ui/faces/loginTable.xhtml");
 
 		$(By.xpath("//tr[@data-rk='Tester']")).$(By.tagName("td")).shouldBe(visible).click();
 
