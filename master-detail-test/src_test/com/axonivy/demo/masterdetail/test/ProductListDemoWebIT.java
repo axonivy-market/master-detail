@@ -5,60 +5,61 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import javax.inject.Named;
-
-import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
 
 import com.axonivy.ivy.webtest.IvyWebTest;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
+import com.codeborne.selenide.Selenide;
 
-import ch.ivyteam.ivy.environment.IvyTest;
-import ch.ivyteam.ivy.security.IUser;
-
-/**
- * This Stateful Datatable Demo Web test will: 1_ generate the test data in the
- * business repo. 2_ login into the system with "Tester" user. 3_ start
- * "showProductList" process 4_ verify that the table of "Products" is
- * displayed. 5_ add a New "Product" into the business repo.
- * 
- */
-@IvyTest
 @IvyWebTest
-@TestMethodOrder(OrderAnnotation.class)
 public class ProductListDemoWebIT {
+	private static final String TESTER_USER_NAME = "tester";
+	private static final String TESTER_PASSWORD = "tester";
 
-	@Test
-	@Order(1)
+	@BeforeEach
 	public void createTestData() {
 		// valid links can be copied from the start page of the internal web-browser
 		open(EngineUrl.createProcessUrl("master-detail-demo/1887B5D187E6060D/createTestData.ivp"));
-
 	}
 
 	@Test
-	@Order(2)
-	public void showDatatableRepo(@Named("tester") IUser tester) {
-		assertThat(tester.getDisplayName()).isEqualTo("Tester");
+	public void showDatatableRepo() {
+		loginWithTesterUser();
 
-		open(EngineUrl.base() + "/dev-workflow-ui/faces/loginTable.xhtml");
+		openProductList();
+		var sizeOfTable = $(By.id("form:productTable_data")).$$(By.cssSelector("tr")).size();
+		assertTrue(sizeOfTable > 0);
+		
+		addNewProduct();
+		// Wait 1 second to save data
+		Selenide.sleep(1000);
 
-		$(By.xpath("//tr[@data-rk='Tester']")).$(By.tagName("td")).shouldBe(visible).click();
+		openProductList();
+		var sizeOfTableAfterAddedNewProduct = $(By.id("form:productTable_data")).$$(By.cssSelector("tr")).size();
+		assertTrue(sizeOfTableAfterAddedNewProduct == sizeOfTable + 1);
+	}
+	
+	private void loginWithTesterUser() {
+		open(EngineUrl.base() + "/dev-workflow-ui/faces/login.xhtml");
+		$(By.id("loginForm:userName")).shouldBe(visible).sendKeys(TESTER_USER_NAME);
+		$(By.id("loginForm:password")).shouldBe(visible).sendKeys(TESTER_PASSWORD);
+		$(By.id("loginForm:login")).shouldBe(visible).click();
+		var sessionUserName = $(By.id("sessionUserName"));
+		sessionUserName.shouldBe(visible);
+		assertTrue(TESTER_USER_NAME.equals(sessionUserName.getText()));
+	}
 
+	private void openProductList() {
 		// valid links can be copied from the start page of the internal web-browser
 		open(EngineUrl.createProcessUrl("master-detail-demo/188341B154DAFDDD/showProductList.ivp"));
-		// verify that the registration was successful.
-		$(By.id("form:productTable")).shouldBe(visible, text("List of products"));
+		$(By.id("form:productTable_data")).shouldBe(visible);
 	}
 
-	@Test
-	@Order(3)
-	public void addNewProduct() {
+	private void addNewProduct() {
 		// valid links can be copied from the start page of the internal web-browser
 		open(EngineUrl.createProcessUrl("master-detail-demo/188341B154DAFDDD/showProductList.ivp"));
 

@@ -16,7 +16,7 @@ import com.axonivy.demo.masterdetail.logging.Logger;
 
 import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.request.IHttpRequest;
-import ch.ivyteam.ivy.security.SecurityManagerFactory;
+import ch.ivyteam.ivy.security.exec.Sudo;
 import ch.ivyteam.ivy.workflow.IProcessStart;
 
 
@@ -86,7 +86,7 @@ public class LinkHelper {
 	public static List<String> getFullLinksBySignature(String signature) {
 		List<String> links = new ArrayList<>();
 		try {
-			SecurityManagerFactory.getSecurityManager().executeAsSystem(() -> {
+			Sudo.get(() -> {
 				if (Ivy.request() instanceof IHttpRequest){
 					HttpServletRequest httpReq = ((IHttpRequest)Ivy.request()).getHttpServletRequest();
 					Set<IProcessStart> processStarts = Ivy.wf().findProcessStartsBySignature(signature);

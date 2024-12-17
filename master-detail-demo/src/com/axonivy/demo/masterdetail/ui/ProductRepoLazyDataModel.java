@@ -242,6 +242,7 @@ public class ProductRepoLazyDataModel extends LazyDataModel<Product> implements 
 		DaoServiceRegistry.getProductRepoDAO().save(product);
 	}	
 	
+	@SuppressWarnings("unchecked")
 	private void addSelectOneMenuQueryFilter(Query<Product> query, String filterName, Map<String, FilterMeta> filters) {
 		if(filters.get(filterName) != null) {
 			if(filters.get(filterName).getFilterValue() instanceof ArrayList) {
@@ -312,8 +313,9 @@ public class ProductRepoLazyDataModel extends LazyDataModel<Product> implements 
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	private void addDateRangeQueryFilter(Query<Product> query, String filterName, Map<String, FilterMeta> filters, boolean checkStatus) {
-		if(filters.get(filterName) != null) {			
+		if(filters.get(filterName) != null) {		
 			List<LocalDate> dateRange = (ArrayList<LocalDate>) filters.get(filterName).getFilterValue();
 			if(dateRange.size() > 1) {
 				Filter<Product> dateFilter = Ivy.repo().search(Product.class).dateTimeField(filterName).isAfterOrEqualTo(DateService.setTimeZero(dateRange.get(0))).and().dateTimeField(filterName).isBeforeOrEqualTo(DateService.setTimeMidnight(dateRange.get(1)));

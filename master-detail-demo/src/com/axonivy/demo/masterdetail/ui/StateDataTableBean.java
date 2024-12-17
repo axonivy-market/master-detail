@@ -124,7 +124,8 @@ public class StateDataTableBean {
 
 		return filters;
 	}
-	
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void setDropdownFilterValue(Entry<String, FilterMeta> filter, int filterSize, Class clazz) {
 		Object[] resultObjectArray = new Object[filterSize];
 		List<String> statusList = (List<String>) filter.getValue().getFilterValue();
@@ -133,7 +134,8 @@ public class StateDataTableBean {
 		}
 		filter.getValue().setFilterValue(resultObjectArray);
 	}
-	
+
+	@SuppressWarnings("unchecked")
 	private void setDateFilterValue(Entry<String, FilterMeta> filter, String... filterNames) {
 		for(String filterName : filterNames) {
 			if(filterName.equals(filter.getKey())) {
