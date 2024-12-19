@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "1887B5D187E6060D",
   "config" : {
     "data" : "Test.CreateTestDataData"
@@ -23,22 +23,29 @@
       "visual" : {
         "at" : { "x" : 504, "y" : 152 }
       },
-      "connect" : { "id" : "f10", "to" : "f9" }
+      "connect" : [
+        { "id" : "f10", "to" : "f9" }
+      ]
     }, {
       "id" : "f7",
       "type" : "RequestStart",
       "name" : "createTestDataRepo.ivp",
       "config" : {
-        "callSignature" : "createTestData",
-        "outLink" : "createTestData.ivp",
-        "startName" : "Create Test Data Repo",
-        "tags" : "demo"
+        "signature" : "createTestData",
+        "request" : {
+          "name" : "Create Test Data Repo"
+        }
       },
+      "tags" : [
+        "demo"
+      ],
       "visual" : {
         "at" : { "x" : 344, "y" : 152 },
         "labelOffset" : { "x" : 50, "y" : 37 }
       },
-      "connect" : { "id" : "f8", "to" : "f3" }
+      "connect" : [
+        { "id" : "f8", "to" : "f3" }
+      ]
     }, {
       "id" : "f9",
       "type" : "TaskEnd",

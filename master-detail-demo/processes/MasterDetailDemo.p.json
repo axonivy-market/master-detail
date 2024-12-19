@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "188341B154DAFDDD",
   "config" : {
     "data" : "com.axonivy.demo.MasterDetailDemoData"
@@ -9,14 +9,17 @@
       "type" : "RequestStart",
       "name" : "showProductList.ivp",
       "config" : {
-        "callSignature" : "showProductList",
-        "outLink" : "showProductList.ivp",
-        "startName" : "Show Product List"
+        "signature" : "showProductList",
+        "request" : {
+          "name" : "Show Product List"
+        }
       },
       "visual" : {
         "at" : { "x" : 104, "y" : 80 }
       },
-      "connect" : { "id" : "f8", "to" : "f7" }
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
     }, {
       "id" : "f6",
       "type" : "TaskEnd",
@@ -28,8 +31,7 @@
       "type" : "DialogCall",
       "name" : "List all products",
       "config" : {
-        "dialogId" : "com.axonivy.demo.masterdetail.ProductList",
-        "startMethod" : "start()",
+        "dialog" : "com.axonivy.demo.masterdetail.ProductList:start()",
         "output" : {
           "map" : {
             "out" : "in",
@@ -40,39 +42,40 @@
       "visual" : {
         "at" : { "x" : 232, "y" : 80 }
       },
-      "connect" : { "id" : "f13", "to" : "f12" }
+      "connect" : [
+        { "id" : "f13", "to" : "f12" }
+      ]
     }, {
       "id" : "f0",
       "type" : "RequestStart",
       "name" : "manageProduct.ivp",
       "config" : {
-        "callSignature" : "manageProduct",
+        "signature" : "manageProduct",
         "input" : {
           "params" : [
-            { "name" : "productID", "type" : "String" }
+            { "name" : "productID", "type" : "String", "desc" : "" }
           ],
           "map" : {
             "out.productID" : "param.productID"
           }
         },
-        "outLink" : "manageProduct.ivp",
-        "showInStartList" : false
+        "request" : {
+          "isVisibleOnStartList" : false
+        }
       },
       "visual" : {
         "at" : { "x" : 104, "y" : 304 }
       },
-      "connect" : { "id" : "f3", "to" : "f2" }
+      "connect" : [
+        { "id" : "f3", "to" : "f2" }
+      ]
     }, {
       "id" : "f2",
       "type" : "DialogCall",
       "name" : "Product Detail",
       "config" : {
-        "dialogId" : "com.axonivy.demo.masterdetail.ProductDetail",
-        "startMethod" : "start(String)",
+        "dialog" : "com.axonivy.demo.masterdetail.ProductDetail:start(String)",
         "call" : {
-          "params" : [
-            { "name" : "id", "type" : "String" }
-          ],
           "map" : {
             "param.id" : "in.productID"
           }
@@ -81,17 +84,24 @@
       "visual" : {
         "at" : { "x" : 232, "y" : 304 }
       },
-      "connect" : { "id" : "f15", "to" : "f7" }
+      "connect" : [
+        { "id" : "f15", "to" : "f7" }
+      ]
     }, {
       "id" : "f12",
       "type" : "Alternative",
+      "config" : {
+        "conditions" : {
+          "f17" : "in.productID.length() == 0"
+        }
+      },
       "visual" : {
         "at" : { "x" : 424, "y" : 80 }
       },
       "connect" : [
         { "id" : "f17", "to" : "f6", "label" : {
             "name" : "exit"
-          }, "condition" : "in.productID.length() == 0" },
+          } },
         { "id" : "f9", "to" : "f14", "label" : {
             "name" : [
               "edit",
@@ -104,12 +114,8 @@
       "type" : "DialogCall",
       "name" : "Product Detail",
       "config" : {
-        "dialogId" : "com.axonivy.demo.masterdetail.ProductDetail",
-        "startMethod" : "start(String)",
+        "dialog" : "com.axonivy.demo.masterdetail.ProductDetail:start(String)",
         "call" : {
-          "params" : [
-            { "name" : "id", "type" : "String" }
-          ],
           "map" : {
             "param.id" : "in.productID"
           }
@@ -118,6 +124,8 @@
       "visual" : {
         "at" : { "x" : 424, "y" : 200 }
       },
-      "connect" : { "id" : "f16", "to" : "f7", "via" : [ { "x" : 248, "y" : 200 } ] }
+      "connect" : [
+        { "id" : "f16", "to" : "f7", "via" : [ { "x" : 248, "y" : 200 } ] }
+      ]
     } ]
 }

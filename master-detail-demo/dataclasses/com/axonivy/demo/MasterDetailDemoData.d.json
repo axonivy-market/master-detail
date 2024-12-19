@@ -1,0 +1,10 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "MasterDetailDemoData",
+  "namespace" : "com.axonivy.demo",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "productID",
+    "type" : "String"
+  } ]
+}

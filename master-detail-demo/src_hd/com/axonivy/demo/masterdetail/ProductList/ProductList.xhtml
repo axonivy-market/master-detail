@@ -210,24 +210,34 @@
 						</f:facet>
 						<p:outputLabel value="#{product.onSale == true ? ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/yes') : (product.onSale == false ? ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/no') : '')}" />
 					</p:column>
-					
+
 					<p:column id="actionsColumn" resizable="false"
 						headerText="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/actions')}"
 						styleClass="zoneColumnCaseTable" selectRow="false">
 
-					    <p:tooltip for="editThroughProcess" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditThroughProcess')}" position="right"/>
-						<p:commandLink id="editThroughProcess" global="false" action="#{logic.onEditThroughProcessClicked(product.id)}" >								    
+						<p:tooltip for="editThroughProcess"
+							value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditThroughProcess')}"
+							position="right" />
+						<p:commandLink id="editThroughProcess" global="false"
+							action="#{logic.onEditThroughProcessClicked(product.id)}">
 							<h:outputText styleClass="fa fa-pencil" />
 						</p:commandLink>
 
-					    <p:tooltip for="editByLink" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditByLink')}" position="right"/>
-						<p:commandLink id="editByLink" global="false" action="#{logic.onEditByLinkClicked(product.id)}" >								    
+						<p:tooltip for="editByLink"
+							value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditByLink')}"
+							position="right" />
+						<p:commandLink id="editByLink" global="false"
+							action="#{logic.onEditByLinkClicked(product.id)}">
 							<h:outputText styleClass="fa fa-link" />
 						</p:commandLink>
 
-						<p:tooltip for="editWithViews" value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditWithViews')}" position="right"/>
-						<p:commandLink id="editWithViews" global="false" action="ProductDetail" actionListener="#{logic.onEditByViewsClicked(product)}">							
-							<h:outputText styleClass="fa fa-eye"  />				
+						<p:tooltip for="editWithViews"
+							value="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/tooltipEditWithViews')}"
+							position="right" />
+						<p:commandLink id="editWithViews" global="false"
+							action="ProductDetail"
+							actionListener="#{logic.onEditByViewsClicked(product)}">
+							<h:outputText styleClass="fa fa-eye" />
 						</p:commandLink>
 
 					</p:column>
@@ -242,7 +252,7 @@
 					<div class="ui-g-6">
 						<p:commandButton value="Close Product List" icon="fa fa-times" style="float:right" actionListener="#{logic.close}"/>
 					</div>
-				</div>				
+				</div>
 			</h:form>
 
 	
@@ -343,19 +353,21 @@
 					</div>
 				</h:form>
 			</p:dialog>
-			
-			
+
 			<p:confirmDialog id="deleteProductsDialog"
-			    message="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/deletionMessage')}"
-			    header="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/deletionHeader')}"
-			    widgetVar="deleteProductsDialog" appendTo="@(body)" severity="alert" responsive="true">
-			    <p:commandButton value="#{ivy.cms.co('/Labels/no')}" styleClass="buttonMargin"
-			      onclick="PF('deleteProductsDialog').hide();" type="button" />
-			    <p:commandButton id="confirmDODelete" value="#{ivy.cms.co('/Labels/yes')}"
-			      actionListener="#{logic.deleteSelected}"
-			      oncomplete="PF('deleteProductsDialog').hide();PF('productTable').filter();" 
-			      update="#{p:resolveFirstComponentWithId('productTable', view).clientId}" />
-			  </p:confirmDialog>
+				message="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/deletionMessage')}"
+				header="#{ivy.cms.co('/Dialogs/com/axonivy/demo/masterdetail/ui/ProductList/deletionHeader')}"
+				widgetVar="deleteProductsDialog" appendTo="@(body)" severity="alert"
+				responsive="true">
+				<p:commandButton value="#{ivy.cms.co('/Labels/no')}"
+					styleClass="buttonMargin"
+					onclick="PF('deleteProductsDialog').hide();" type="button" />
+				<p:commandButton id="confirmDODelete"
+					value="#{ivy.cms.co('/Labels/yes')}"
+					actionListener="#{logic.deleteSelected}"
+					oncomplete="PF('deleteProductsDialog').hide();PF('productTable').filter();"
+					update="#{p:resolveFirstComponentWithId('productTable', view).clientId}" />
+			</p:confirmDialog>
 		</ui:define>
 	</ui:composition>
 </h:body>
