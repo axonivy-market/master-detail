@@ -5,11 +5,9 @@
   "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "id",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "String"
   }, {
     "name" : "product",
-    "type" : "com.axonivy.demo.masterdetail.entity.Product",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.demo.masterdetail.entity.Product"
   } ]
 }
