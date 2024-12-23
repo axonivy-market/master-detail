@@ -5,71 +5,54 @@
   "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "copyValid",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "editedRowKey",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "String"
   }, {
     "name" : "field",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "String"
   }, {
     "name" : "isProfileAdmin",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "newObjects",
-    "type" : "List<java.lang.Object>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "List<java.lang.Object>"
   }, {
     "name" : "numberOfCopies",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   }, {
     "name" : "privateProfiles",
-    "type" : "java.util.List<com.axonivy.demo.masterdetail.entity.Profile>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<com.axonivy.demo.masterdetail.entity.Profile>"
   }, {
     "name" : "publicProfiles",
-    "type" : "java.util.List<com.axonivy.demo.masterdetail.entity.Profile>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<com.axonivy.demo.masterdetail.entity.Profile>"
   }, {
     "name" : "selectedProduct",
-    "type" : "java.util.List<com.axonivy.demo.masterdetail.entity.Product>",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "java.util.List<com.axonivy.demo.masterdetail.entity.Product>"
   }, {
     "name" : "selectedProfile",
-    "type" : "com.axonivy.demo.masterdetail.entity.Profile",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.demo.masterdetail.entity.Profile"
   }, {
     "name" : "streamedContent",
-    "type" : "org.primefaces.model.DefaultStreamedContent",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "org.primefaces.model.DefaultStreamedContent"
   }, {
     "name" : "tableRows",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   }, {
     "name" : "stateDataTableBean",
-    "type" : "com.axonivy.demo.masterdetail.ui.StateDataTableBean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.demo.masterdetail.ui.StateDataTableBean"
   }, {
     "name" : "multiChangeState",
-    "type" : "com.axonivy.demo.masterdetail.enums.ProductStatus",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.demo.masterdetail.enums.ProductStatus"
   }, {
     "name" : "product",
-    "type" : "com.axonivy.demo.masterdetail.entity.Product",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.demo.masterdetail.entity.Product"
   }, {
     "name" : "readOnly",
-    "type" : "Boolean",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Boolean"
   }, {
     "name" : "selectedProductID",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "String"
   } ]
 }
