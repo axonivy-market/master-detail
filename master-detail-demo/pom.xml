@@ -12,11 +12,14 @@
   <artifactId>master-detail-demo</artifactId>
   <version>13.1.1-SNAPSHOT</version>
   <packaging>iar</packaging>
+  <properties>
+    <portalComponents.version>13.1.1</portalComponents.version>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>com.axonivy.portal</groupId>
       <artifactId>portal-components</artifactId>
-      <version>13.2.0-m277</version>
+      <version>${portalComponents.version}</version>
       <type>iar</type>
     </dependency>
     <dependency>
