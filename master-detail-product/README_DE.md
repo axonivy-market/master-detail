@@ -1,18 +1,48 @@
-# Master-Detail-Ansicht
+# #Führend-#Zuweisen #Anschauen
 
-Das Best-Practice-Beispiel der Master-Detail-Ansicht von Axon Ivy zeigt dir folgende Funktionen:
+Das bestes-Fahrpraxis Beispiel von das #führend-Detail Ausblick von #Axon #Ivy
+demonstriert die folgenden Charakterzüge:
 
-* Vier verschiedene Ansätze zur Implementierung des Master-Detail-Musters werden basierend auf der Komplexität des Projekts demonstriert. Diese Ansätze beinhalten die Nutzung unterschiedlicher Prozesselemente, UI-Ansichten und modaler Dialoge.
-* Dieses Beispiel vereinfacht UI-Herausforderungen sowohl für professionelle Entwickler als auch für Low-Coder und bietet Anleitungen zur effizienten Implementierung der Master-Detail-Schnittstelle.
-* Dieses Best-Practice-Beispiel ist eine wertvolle Ressource zur Lösung von [Master-Detail-Schnittstellen](https://de.wikipedia.org/wiki/Master-Detail-Schnittstelle)-Anforderungen in jedem Prozessautomatisierungsprojekt.
+* Vier verschiedene Konzepte zu implementieren das #Führend-Detail Muster ist
+  demonstriert basisbezogen auf das ProjektsUmfang. Diese Konzepte involvieren
+  nutzen verschiedene Arbeitsgang Elemente, UI Ausblicke, und modale
+  Zwiegespräche.
+* #Windschlüpfig machen UI Herausforderungen für beide professionellen
+  Entwickler und niedere #Kodierer, dieses Beispiel versieht weiter Führung
+  genügend implementierend das #Führend-#Zuweisen #einbinden.
+* Dies best-Fahrpraxis Beispiel ist eine kostbare Ressource für lösen
+  [#Führend-#Zuweisen
+  #einbinden](https://en.wikipedia.org/wiki/Master%E2%80%93detail_interface)
+  Forderungen in irgendwelche Arbeitsgang Automatisierung Projekt.
 
 ## Demo
 
-In dieser Demo listet eine Lazy-Datatable alle im Ivy Business-Repository verfügbaren Produkte auf. Es gibt vier Szenarien:
+In dieser Demo, ein faules datatable Listen alle Produkte verfügbar in das Efeu
+Geschäft repo. Dort sind vier Szenarios:
 
-1. Der Benutzer fügt ein neues Produkt hinzu (demonstriert durch einen modalen Dialog, der im selben HTML-Dialog wie die Master-Ansicht geöffnet wird).
-2. Der Benutzer bearbeitet ein vorhandenes Produkt (demonstriert durch ein Geschäftsprozessdesign: Der Prozessfluss führt den Benutzer zu einem eigenständigen Detail-Dialog, und nach Abschluss der Bearbeitung kehrt der Benutzer zum Master-Dialog zurück).
-3. Der Benutzer bearbeitet ein vorhandenes Produkt (demonstriert durch die Einleitung eines Prozesses über einen Link: Der Benutzer wird zu einem Prozessstart weitergeleitet, der einen eigenständigen Detail-Dialog öffnet. Nach Abschluss der Bearbeitung kehrt der Benutzer zum Master-Dialog zurück).
-4. Der Benutzer bearbeitet ein vorhandenes Produkt (demonstriert durch eine Detailansicht, die im Master-Dialog enthalten ist und mit PrimeFaces navigiert wird).
+1. Der Nutzer fügt zu ein neues Produkt (demonstriert bei einem modalen
+   Zwiegespräch geöffnet innerhalb ebensolchem gleichen #HTML Zwiegespräch da
+   das #führend).
+2. Die Nutzer Bearbeitungen ein #existierend Produkt (demonstriert bei einem
+   dienstlichen Arbeitsgang Design: Die Arbeitsgang Strömung nimmt den Nutzer zu
+   einem Stand-#allein Detail Zwiegespräch, und auf Abschluss von bearbeiten,
+   die Nutzer Rückgaben zu dem #führend Zwiegespräch).
+3. Die Nutzer Bearbeitungen ein #existierend Produkt (demonstriert mal einen
+   Arbeitsgang anlaufen via ein Band: Der Nutzer ist #umleiten zu einen
+   Arbeitsgang Start #welche öffnet einen Stand-#allein Detail Zwiegespräch. Auf
+   Abschluss von bearbeiten, die Nutzer Rückgaben zu dem #führend Zwiegespräch).
+4. Die Nutzer Bearbeitungen ein #existierend Produkt (demonstriert bei einen
+   Detail Ausblick gezügelt innerhalb dem #führend Zwiegespräch und befahrend
+   benutzen PrimeFaces).
 
-![image](https://github.com/axonivy-market/master-detail/assets/129939502/44e36978-dd07-453f-857d-4db359318165)
+![Image](https://github.com/axonivy-market/master-detail/assets/129939502/44e36978-dd07-453f-857d-4db359318165)
+
+
+## Einrichtung
+
+Einfach #anlaufen den Klausur Arbeitsgang geheißen: `Schafft Klausur #Daten
+Repo`. Dieser Arbeitsgang will einige Produkte innerhalb dem dienstlichen
+Aufbewahrungsort generieren zu initialisieren den Produkte Tisch mit Daten.
+
+Dann #starten den Arbeitsgang `Vorstellung Produkt Liste`.
+
