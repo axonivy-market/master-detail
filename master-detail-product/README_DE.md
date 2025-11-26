@@ -38,7 +38,7 @@ Ivy-Business-Repo verfügbar sind. Es gibt vier Szenarien:
 ![Bild](https://github.com/axonivy-market/master-detail/assets/129939502/44e36978-dd07-453f-857d-4db359318165)
 
 
-## Einrichtung
+## Setup
 
 Starten Sie einfach den Testprozess mit dem Namen: `Create Test Data Repo`.
 Dieser Prozess generiert einige Produkte innerhalb des Business-Repositorys, um
