@@ -1,18 +1,48 @@
 # Master-Detail-Ansicht
 
-Das Best-Practice-Beispiel der Master-Detail-Ansicht von Axon Ivy zeigt dir folgende Funktionen:
+Das Best-Practice-Beispiel für die Master-Detail-Ansicht von Axon Ivy
+demonstriert die folgenden Funktionen:
 
-* Vier verschiedene Ansätze zur Implementierung des Master-Detail-Musters werden basierend auf der Komplexität des Projekts demonstriert. Diese Ansätze beinhalten die Nutzung unterschiedlicher Prozesselemente, UI-Ansichten und modaler Dialoge.
-* Dieses Beispiel vereinfacht UI-Herausforderungen sowohl für professionelle Entwickler als auch für Low-Coder und bietet Anleitungen zur effizienten Implementierung der Master-Detail-Schnittstelle.
-* Dieses Best-Practice-Beispiel ist eine wertvolle Ressource zur Lösung von [Master-Detail-Schnittstellen](https://de.wikipedia.org/wiki/Master-Detail-Schnittstelle)-Anforderungen in jedem Prozessautomatisierungsprojekt.
+* Basierend auf der Komplexität des Projekts werden vier verschiedene Ansätze
+  zur Implementierung des Master-Detail-Musters vorgestellt. Diese Ansätze
+  umfassen die Verwendung verschiedener Prozesselemente, UI-Ansichten und
+  modaler Dialoge.
+* Dieses Beispiel vereinfacht die Herausforderungen der Benutzeroberfläche
+  sowohl für professionelle Entwickler als auch für Low-Code-Entwickler und
+  bietet eine Anleitung zur effizienten Implementierung der
+  Master-Detail-Schnittstelle.
+* Dieses Best-Practice-Beispiel ist eine wertvolle Ressource für die Lösung von
+  Anforderungen an die
+  [Master-Detail-Schnittstelle](https://en.wikipedia.org/wiki/Master%E2%80%93detail_interface)
+  in jedem Prozessautomatisierungsprojekt.
 
 ## Demo
 
-In dieser Demo listet eine Lazy-Datatable alle im Ivy Business-Repository verfügbaren Produkte auf. Es gibt vier Szenarien:
+In dieser Demo listet eine Lazy-Datentabelle alle Produkte auf, die im
+Ivy-Business-Repo verfügbar sind. Es gibt vier Szenarien:
 
-1. Der Benutzer fügt ein neues Produkt hinzu (demonstriert durch einen modalen Dialog, der im selben HTML-Dialog wie die Master-Ansicht geöffnet wird).
-2. Der Benutzer bearbeitet ein vorhandenes Produkt (demonstriert durch ein Geschäftsprozessdesign: Der Prozessfluss führt den Benutzer zu einem eigenständigen Detail-Dialog, und nach Abschluss der Bearbeitung kehrt der Benutzer zum Master-Dialog zurück).
-3. Der Benutzer bearbeitet ein vorhandenes Produkt (demonstriert durch die Einleitung eines Prozesses über einen Link: Der Benutzer wird zu einem Prozessstart weitergeleitet, der einen eigenständigen Detail-Dialog öffnet. Nach Abschluss der Bearbeitung kehrt der Benutzer zum Master-Dialog zurück).
-4. Der Benutzer bearbeitet ein vorhandenes Produkt (demonstriert durch eine Detailansicht, die im Master-Dialog enthalten ist und mit PrimeFaces navigiert wird).
+1. Der Benutzer fügt ein neues Produkt hinzu (angezeigt durch ein modales
+   Dialogfeld, das innerhalb desselben HTML-Dialogfelds wie das
+   Master-Dialogfeld geöffnet wird).
+2. Der Benutzer bearbeitet ein vorhandenes Produkt (dargestellt durch ein
+   Geschäftsprozessdesign: Der Prozessablauf führt den Benutzer zu einem
+   eigenständigen Detail-Dialogfeld, und nach Abschluss der Bearbeitung kehrt
+   der Benutzer zum Master-Dialogfeld zurück).
+3. Der Benutzer bearbeitet ein bestehendes Produkt (dies wird durch das Starten
+   eines Prozesses über einen Link demonstriert: Der Benutzer wird zu einem
+   Prozessstart weitergeleitet, der einen eigenständigen Detail-Dialog öffnet.
+   Nach Abschluss der Bearbeitung kehrt der Benutzer zum Master-Dialog zurück).
+4. Der Benutzer bearbeitet ein vorhandenes Produkt (dargestellt durch eine
+   Detailansicht im Master-Dialogfeld und Navigation mit PrimeFaces).
 
-![image](https://github.com/axonivy-market/master-detail/assets/129939502/44e36978-dd07-453f-857d-4db359318165)
+![Bild](https://github.com/axonivy-market/master-detail/assets/129939502/44e36978-dd07-453f-857d-4db359318165)
+
+
+## Setup
+
+Starten Sie einfach den Testprozess mit dem Namen: `Create Test Data Repo`.
+Dieser Prozess generiert einige Produkte innerhalb des Business-Repositorys, um
+die Produkttabelle mit Daten zu initialisieren.
+
+Starten Sie dann den Prozess `Produktliste anzeigen`.
+
