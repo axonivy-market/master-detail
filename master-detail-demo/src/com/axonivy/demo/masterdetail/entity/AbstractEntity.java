@@ -2,7 +2,7 @@ package com.axonivy.demo.masterdetail.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.MappedSuperclass;
 
 /**
  * Base database entity object
