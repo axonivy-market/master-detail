@@ -10,9 +10,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import org.hibernate.annotations.GenericGenerator;
 
 import com.axonivy.demo.masterdetail.enums.Availability;
 import com.axonivy.demo.masterdetail.enums.ProductStatus;
@@ -25,8 +25,7 @@ public class Product extends AbstractEntity {
 
 	@Id
 	@Column(length = 32, nullable = false) 
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(strategy = GenerationType.UUID)
 	private String id;
 	//Adding Column STEP 1
 	@Column
