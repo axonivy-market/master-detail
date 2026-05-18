@@ -16,12 +16,17 @@
     <dependency>
       <groupId>com.axonivy.portal</groupId>
       <artifactId>portal-components</artifactId>
-      <version>14.0.0-m291</version>
+      <version>13.2.0.4</version>
       <type>iar</type>
     </dependency>
     <dependency>
       <groupId>com.axonivy.ivy.api</groupId>
       <artifactId>ivy-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
   <repositories>
