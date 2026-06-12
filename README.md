@@ -1,4 +1,4 @@
-# Master Detail 
+# Master Detail Utils
 
 [![CI Build](https://github.com/axonivy-market/master-detail-utils/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/master-detail-utils/actions/workflows/ci.yml)
 
