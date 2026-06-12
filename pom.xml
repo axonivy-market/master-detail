@@ -8,12 +8,12 @@
 
   <modules>
     <module>master-detail-utils</module>
-    <module>master-detail-test</module>
-    <module>master-detail-product</module>
+    <module>master-detail-utils-test</module>
+    <module>master-detail-utils-product</module>
   </modules>
 
   <scm>
-    <developerConnection>scm:git:https://github.com/axonivy-market/master-detail.git</developerConnection>
+    <developerConnection>scm:git:https://github.com/axonivy-market/master-detail-utils.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 

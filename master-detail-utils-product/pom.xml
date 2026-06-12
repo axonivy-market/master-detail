@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.axonivy.utils.masterdetail</groupId>
-  <artifactId>master-detail-product</artifactId>
+  <artifactId>master-detail-utils-product</artifactId>
   <version>13.2.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <properties>
-    <variables.yaml.file>../master-detail/config/variables.yaml</variables.yaml.file>
+    <variables.yaml.file>../master-detail-utils/config/variables.yaml</variables.yaml.file>
   </properties>
 
   <build>

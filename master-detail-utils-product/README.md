@@ -15,7 +15,7 @@ In this demo, a lazy datatable lists all products available in the Ivy business 
 3. The user edits an existing product (demonstrated by initiating a process via a link: the user is redirected to a process start which opens a stand-alone detail dialog. Upon completion of editing, the user returns to the master dialog).
 4. The user edits an existing product (demonstrated by a detail view contained within the master dialog and navigating using PrimeFaces).
 
-![image](https://github.com/axonivy-market/master-detail/assets/129939502/44e36978-dd07-453f-857d-4db359318165)
+![image](https://github.com/axonivy-market/master-detail-utils/assets/129939502/44e36978-dd07-453f-857d-4db359318165)
 
 
 ## Setup
