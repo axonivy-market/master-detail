@@ -7,8 +7,8 @@
     <version>13.2.0</version>
     <relativePath />
   </parent>
-  <groupId>com.axonivy.demo.masterdetail</groupId>
-  <artifactId>master-detail-demo</artifactId>
+  <groupId>com.axonivy.utils.masterdetail</groupId>
+  <artifactId>master-detail-utils</artifactId>
   <version>13.2.1-SNAPSHOT</version>
   <packaging>iar</packaging>
   <dependencies>

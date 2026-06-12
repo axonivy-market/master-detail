@@ -6,8 +6,8 @@
       "data": {
         "projects": [
           {
-            "groupId": "com.axonivy.demo.masterdetail",
-            "artifactId": "master-detail-demo",
+            "groupId": "com.axonivy.utils.masterdetail",
+            "artifactId": "master-detail-utils",
             "version": "${version}",
             "type": "iar"
           }

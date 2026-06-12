@@ -1,0 +1,58 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "ProductListData",
+  "namespace" : "com.axonivy.utils.masterdetail.ProductList",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "copyValid",
+    "type" : "Boolean"
+  }, {
+    "name" : "editedRowKey",
+    "type" : "String"
+  }, {
+    "name" : "field",
+    "type" : "String"
+  }, {
+    "name" : "isProfileAdmin",
+    "type" : "Boolean"
+  }, {
+    "name" : "newObjects",
+    "type" : "List<java.lang.Object>"
+  }, {
+    "name" : "numberOfCopies",
+    "type" : "Integer"
+  }, {
+    "name" : "privateProfiles",
+    "type" : "java.util.List<com.axonivy.utils.masterdetail.entity.Profile>"
+  }, {
+    "name" : "publicProfiles",
+    "type" : "java.util.List<com.axonivy.utils.masterdetail.entity.Profile>"
+  }, {
+    "name" : "selectedProduct",
+    "type" : "java.util.List<com.axonivy.utils.masterdetail.entity.Product>"
+  }, {
+    "name" : "selectedProfile",
+    "type" : "com.axonivy.utils.masterdetail.entity.Profile"
+  }, {
+    "name" : "streamedContent",
+    "type" : "org.primefaces.model.DefaultStreamedContent"
+  }, {
+    "name" : "tableRows",
+    "type" : "Integer"
+  }, {
+    "name" : "stateDataTableBean",
+    "type" : "com.axonivy.utils.masterdetail.ui.StateDataTableBean"
+  }, {
+    "name" : "multiChangeState",
+    "type" : "com.axonivy.utils.masterdetail.enums.ProductStatus"
+  }, {
+    "name" : "product",
+    "type" : "com.axonivy.utils.masterdetail.entity.Product"
+  }, {
+    "name" : "readOnly",
+    "type" : "Boolean"
+  }, {
+    "name" : "selectedProductID",
+    "type" : "String"
+  } ]
+}

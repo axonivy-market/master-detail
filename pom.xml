@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.axonivy.demo.masterdetail</groupId>
-  <name>master-detail</name>
+  <groupId>com.axonivy.utils.masterdetail</groupId>
+  <name>master-detail-utils</name>
   <artifactId>master-detail-modules</artifactId>
   <version>13.2.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
-    <module>master-detail-demo</module>
+    <module>master-detail-utils</module>
     <module>master-detail-test</module>
     <module>master-detail-product</module>
   </modules>
