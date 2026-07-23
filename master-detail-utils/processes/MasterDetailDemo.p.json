@@ -1,0 +1,131 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "id" : "188341B154DAFDDD",
+  "config" : {
+    "data" : "com.axonivy.utils.masterdetail.MasterDetailDemoData"
+  },
+  "elements" : [ {
+      "id" : "f5",
+      "type" : "RequestStart",
+      "name" : "showProductList.ivp",
+      "config" : {
+        "signature" : "showProductList",
+        "request" : {
+          "name" : "Show Product List"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 104, "y" : 80 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
+    }, {
+      "id" : "f6",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 544, "y" : 80 }
+      }
+    }, {
+      "id" : "f7",
+      "type" : "DialogCall",
+      "name" : "List all products",
+      "config" : {
+        "dialog" : "com.axonivy.utils.masterdetail.ProductList:start()",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.productID" : "result.selectedProductId"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 80 }
+      },
+      "connect" : [
+        { "id" : "f13", "to" : "f12" }
+      ]
+    }, {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "manageProduct.ivp",
+      "config" : {
+        "signature" : "manageProduct",
+        "input" : {
+          "params" : [
+            { "name" : "productID", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.productID" : "param.productID"
+          }
+        },
+        "request" : {
+          "isVisibleOnStartList" : false
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 104, "y" : 304 }
+      },
+      "connect" : [
+        { "id" : "f3", "to" : "f2" }
+      ]
+    }, {
+      "id" : "f2",
+      "type" : "DialogCall",
+      "name" : "Product Detail",
+      "config" : {
+        "dialog" : "com.axonivy.utils.masterdetail.ProductDetail:start(String)",
+        "call" : {
+          "map" : {
+            "param.id" : "in.productID"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 232, "y" : 304 }
+      },
+      "connect" : [
+        { "id" : "f15", "to" : "f7" }
+      ]
+    }, {
+      "id" : "f12",
+      "type" : "Alternative",
+      "config" : {
+        "conditions" : {
+          "f17" : "in.productID.length() == 0"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 424, "y" : 80 }
+      },
+      "connect" : [
+        { "id" : "f17", "to" : "f6", "label" : {
+            "name" : "exit"
+          } },
+        { "id" : "f9", "to" : "f14", "label" : {
+            "name" : [
+              "edit",
+              "product"
+            ]
+          } }
+      ]
+    }, {
+      "id" : "f14",
+      "type" : "DialogCall",
+      "name" : "Product Detail",
+      "config" : {
+        "dialog" : "com.axonivy.utils.masterdetail.ProductDetail:start(String)",
+        "call" : {
+          "map" : {
+            "param.id" : "in.productID"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 424, "y" : 200 }
+      },
+      "connect" : [
+        { "id" : "f16", "to" : "f7", "via" : [ { "x" : 248, "y" : 200 } ] }
+      ]
+    } ]
+}
