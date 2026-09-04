@@ -1,13 +1,13 @@
 package com.axonivy.demo.masterdetail.ui;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Named;
 
 import com.axonivy.demo.masterdetail.enums.Availability;
 import com.axonivy.demo.masterdetail.enums.ProductStatus;
 import com.axonivy.demo.masterdetail.enums.Quality;
 
-@ManagedBean(name="enumBean")
+@Named(value="enumBean")
 @ApplicationScoped
 public class EnumBean {
 	public ProductStatus[] getProductStatusValues() {

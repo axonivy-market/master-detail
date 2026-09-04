@@ -16,7 +16,7 @@
     <dependency>
       <groupId>com.axonivy.portal</groupId>
       <artifactId>portal-components</artifactId>
-      <version>14.0.0-m292</version>
+      <version>14.0.0-m297</version>
       <type>iar</type>
     </dependency>
     <dependency>
