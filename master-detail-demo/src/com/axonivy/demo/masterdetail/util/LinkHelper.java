@@ -8,9 +8,9 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Named;
+import jakarta.servlet.http.HttpServletRequest;
 
 import com.axonivy.demo.masterdetail.logging.Logger;
 
@@ -20,7 +20,7 @@ import ch.ivyteam.ivy.security.exec.Sudo;
 import ch.ivyteam.ivy.workflow.IProcessStart;
 
 
-@ManagedBean (name = "linkHelper")
+@Named (value = "linkHelper")
 @ApplicationScoped
 public class LinkHelper {
 
